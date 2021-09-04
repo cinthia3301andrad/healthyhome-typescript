@@ -1,0 +1,65 @@
+{
+    "env": {
+      "browser": true,
+      "jest": true,
+      "es6": true
+    },
+    "plugins": [
+      "react",
+      "react-hooks",
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "extends": [  
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+      
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": "off",
+      // allow jsx syntax in js files (for next.js project)
+      "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+      "semi": "error",
+      "quotes":  [2, "single", { "avoidEscape": true }],
+      "no-multiple-empty-lines": ["error", { "max": 1 }],
+      "spaced-comment": ["error", "always"],
+      "no-var": "error",
+      "max-len": [
+        "error",
+        {
+          "tabWidth": 2,
+          "ignoreTemplateLiterals": true,
+          "ignoreUrls": true
+        }
+      ],   
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "jsx-quotes": ["error", "prefer-double"],
+      "indent": ["error", 2],
+      "no-trailing-spaces": "error",
+      "no-whitespace-before-property": "error",
+      "no-console": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "eqeqeq": "error",
+      "dot-location": ["error", "property"],
+      "no-else-return": ["error", { "allowElseIf": false }],
+      "no-multi-spaces": "error",
+      "no-useless-escape": "error",
+      "default-param-last": "error",
+      "comma-dangle": ["error", "only-multiline"],
+      "no-useless-concat": "error",
+      "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+      "eol-last": ["error", "always"],
+      "func-call-spacing": ["error", "never"],
+      "camelcase": ["error", { "ignoreDestructuring": true }],
+      "function-paren-newline": ["error", "multiline"],
+      "key-spacing": "error",
+      "keyword-spacing": "error",
+      "no-lonely-if": "error",
+      "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+      "no-unneeded-ternary": "error",
+      "space-before-blocks": ["error", "always"]
+    }
+  }
+  
