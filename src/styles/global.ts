@@ -14,6 +14,10 @@ export const GlobalStyle = createGlobalStyle`
     --shape: #FFFFFF;
     --shape-100:#D1D2D6;
 
+    --small: 540px;
+    --small-900: 620px;
+    --medium: 720px;
+
 }
 
     * {

@@ -12,6 +12,11 @@ export const Container = styled.section`
 
   height: 100vh;
   width: 100%;
+
+  @media (max-width: 620px) {
+    background: pink;
+            
+  }
 `;
 
 export const Content = styled.div`
@@ -27,6 +32,14 @@ export const Content = styled.div`
   max-height: 525px;
   background: var(--shape);
 
+  @media (max-width: 620px) {
+    width: 100%;
+    height: 100vh;
+    max-height: none;
+    border-radius: 0;
+    flex-direction: column-reverse;
+            
+  }
 
 `;
 export const SectionLeft = styled.div`
@@ -82,6 +95,16 @@ export const SectionLeft = styled.div`
     }
     }
   }
+  @media (max-width: 620px) { 
+    padding: 35px 10px;
+    height: 25%;
+    width: 100%;
+    border-radius: 50px 50px 0 0;
+
+    h1 { 
+     display: none;
+    }
+  }
 
 `;
 export const SectionRight = styled.div`
@@ -97,5 +120,12 @@ export const SectionRight = styled.div`
     width: 150px;
     height: 10%;
     min-height: 50px;
+  }
+
+  @media (max-width: 620px) { 
+    img { 
+      width: 90%;
+      margin: 10px 0;
+  }
   }
 `;
