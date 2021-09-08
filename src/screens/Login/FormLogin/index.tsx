@@ -7,6 +7,7 @@ import { useFormik } from 'formik';
 import { Form } from './styles';
 import api from '../../../services';
 import Toast from '../../../components/UI/Toast';
+import { SaveSession } from '../../../services/storage';
 
 function FormLogin() {
   const myToast = Toast();
@@ -28,6 +29,7 @@ function FormLogin() {
   async function onSubmit(user: any) {
     await api.post('/administrators/sessions', user).then(response => {
       console.log(response);
+      SaveSession(response.data, 24);
       myToast.addNewToast('Login realizado com sucesso!', 'success');
     }).catch(error => {
       myToast.addNewToast(`${error.response.data.message}`, 'error');
