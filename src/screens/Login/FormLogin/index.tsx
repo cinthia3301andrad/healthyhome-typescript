@@ -14,7 +14,7 @@ function FormLogin() {
 
   const validationSchema = yup.object().shape({
     email: yup.string().email('E-mail inválido').required('Email obrigatório'),
-    password: yup.string().min(8, 'Senha inválida').required('*Obrigatório'),
+    password: yup.string().min(6, 'Senha inválida').required('*Obrigatório'),
   });
 
   const formik = useFormik({
