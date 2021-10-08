@@ -13,6 +13,8 @@ export const Container = styled.section`
   height: 100vh;
   width: 100%;
 
+
+
   @media (max-width: 620px) {
     background: pink;
             

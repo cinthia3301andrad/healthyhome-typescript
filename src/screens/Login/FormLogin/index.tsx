@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import Input from '../../../components/UI/Input/intex';
 
 import * as yup from 'yup';
@@ -7,11 +8,17 @@ import { useFormik } from 'formik';
 import { Form } from './styles';
 import api from '../../../services';
 import Toast from '../../../components/UI/Toast';
-import { SaveSession } from '../../../services/storage';
+
+import { saveSession } from '../../../services/storage';
+
+import { CondominiosContext } from '../../../components/context/CondominiosContext';
+import { useHistory } from 'react-router-dom';
+import { route } from '../../../utils/route';
 
 function FormLogin() {
+  const {getCondos} = useContext(CondominiosContext);
   const myToast = Toast();
-
+  const history = useHistory();
   const validationSchema = yup.object().shape({
     email: yup.string().email('E-mail inválido').required('Email obrigatório'),
     password: yup.string().min(6, 'Senha inválida').required('*Obrigatório'),
@@ -27,11 +34,13 @@ function FormLogin() {
   });
 
   async function onSubmit(user: any) {
-    await api.post('/administrators/sessions', user).then(response => {
-      console.log(response);
-      SaveSession(response.data, 24);
+    await api.post('/administrators/sessions', user).then(async response => {
+      saveSession(response.data, 24);
+      getCondos();
+      history.push(route.userProfile);
       myToast.addNewToast('Login realizado com sucesso!', 'success');
     }).catch(error => {
+      console.log(error);
       myToast.addNewToast(`${error.response.data.message}`, 'error');
     });
 

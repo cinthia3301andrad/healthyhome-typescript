@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     --green-600: #1DE9B6;
     --green-500: #64FFDA;
     
+    --yellow-600: #FFDA6A;
 
     --text-body: #4D4F6C;
 

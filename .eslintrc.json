@@ -25,14 +25,7 @@
       "no-multiple-empty-lines": ["error", { "max": 1 }],
       "spaced-comment": ["error", "always"],
       "no-var": "error",
-      "max-len": [
-        "error",
-        {
-          "tabWidth": 2,
-          "ignoreTemplateLiterals": true,
-          "ignoreUrls": true
-        }
-      ],   
+      "max-len": "off",   
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "jsx-quotes": ["error", "prefer-double"],
